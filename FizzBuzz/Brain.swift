@@ -24,4 +24,7 @@ class Brain {
             return false
         }
     }
+    func isDivisibleByFifteen(number: Int) -> Bool {
+        return true
+    }
 }
