@@ -36,7 +36,8 @@ class Brain {
         } else if isDivisibleByThree(number: number) {
            return "Fizz"
         } else {
-            return "1"
+            let string = "\(number)"
+            return string
         }
         
     }
