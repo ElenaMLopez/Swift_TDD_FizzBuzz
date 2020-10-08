@@ -10,13 +10,6 @@ on:
       - develop
 
 jobs:
-#Swiftlint:
-  #runs-on: ubuntu-latest
-  #steps:
-  #- uses: actions/checkout@v1
-  #- name: Github Action for Swiftlint
-  #  uses: norio-nomura/action-swiftlint@3.0.1
-
   Test:
     runs-on: macOS-latest
     steps:
