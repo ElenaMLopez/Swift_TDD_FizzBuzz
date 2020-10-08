@@ -19,7 +19,7 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.app && /usr/bin/xcodebuild -version
     - name: Run Unit Tests
-      run: xcodebuild build test -project FizzBuzz.xcodeproj -scheme FizzBuzz -destination "platform=iOS Simulator,id=52FD328C-251C-46C1-8208-BCD8B206C9B0,OS=14.0"
+      run: xcodebuild test -project FizzBuzz.xcodeproj -scheme FizzBuzz -destination "platform=iOS Simulator,name=iPhone 8,OS=14.0"
   Build:
     runs-on: macOS-latest
     steps:
