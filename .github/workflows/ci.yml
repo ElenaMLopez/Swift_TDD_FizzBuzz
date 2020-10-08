@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+#Swiftlint:
+  #runs-on: ubuntu-latest
+  #steps:
+  #- uses: actions/checkout@v1
+  #- name: Github Action for Swiftlint
+  #  uses: norio-nomura/action-swiftlint@3.0.1
+
+  Test:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: List all available xcode versions
+      run: ls /Applications | grep Xcode
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.app && /usr/bin/xcodebuild -version
+    - name: Run Unit Tests
+      run: xcodebuild build test -project FizzBuzz.xcodeproj -scheme FizzBuzz -destination "platform=iOS Simulator,id=52FD328C-251C-46C1-8208-BCD8B206C9B0,OS=14.0"
+  Build:
+    runs-on: macOS-latest
+    steps:
+    - name: Dump file hierarchy
+      run: ls -R
